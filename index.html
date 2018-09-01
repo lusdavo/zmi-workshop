@@ -16,11 +16,16 @@
 <div id='map'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoibHVzZGF2byIsImEiOiJjaXR0NzJiZTYwMDAzMm9wNTVrYjd3d2k1In0.65GBPwll6kbq0mysAsaLBA';
+var bounds = [
+    [39.181365966796875, -6.1832221858026], // Southwest coordinates
+    [39.23063278198242, -6.1488325267066735]  // Northeast coordinates
+];
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/lusdavo/cjlj8noro0ezr2smlux56ombk', // stylesheet location
     center: [39.19179439544678,-6.16432094939493], // starting position [lng, lat]
-    zoom: 10 // starting zoom
+    zoom: 10, // starting zoom
+    maxBounds: bounds // Sets bounds as max
 });
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
